@@ -170,11 +170,18 @@ class ThemeManager {
 
     init() {
         const savedTheme = localStorage.getItem('theme');
+
         if (savedTheme === 'light') {
             this.body.classList.add('light-mode');
             if (this.themeIcon) {
                 this.themeIcon.className = 'fas fa-sun';
             }
+        } else {
+            this.body.classList.remove('light-mode');
+            if (this.themeIcon) {
+                this.themeIcon.className = 'fas fa-moon';
+            }
+            localStorage.setItem('theme', 'dark');
         }
 
         if (this.themeToggle) {
