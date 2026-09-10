@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shreekrishnatraders.com.np/sitemap.xml

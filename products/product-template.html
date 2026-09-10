@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+
+    <meta property="og:type" content="product">
+    <meta property="og:title" content="{{OG_TITLE}}">
+    <meta property="og:description" content="{{META_DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:site_name" content="Shree Krishna Traders">
+    <meta property="og:locale" content="en_NP">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{OG_TITLE}}">
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+
+    <script type="application/ld+json">{{JSON_LD}}</script>
+
+    <link rel="icon" type="image/webp" href="../images/logo.webp">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html" class="nav-logo-link">
+                    <img src="../images/logo.webp" alt="Shree Krishna Traders Logo" class="logo-image">
+                    <span>Shree Krishna Traders</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../products.html" class="nav-link">Products</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="separator">/</span>
+        <a href="../products.html">Products</a>
+        <span class="separator">/</span>
+        <span class="current">{{BREADCRUMB_NAME}}</span>
+    </nav>
+
+    <section class="product-page">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="product-main-image">
+                    <img src="../{{PRODUCT_IMAGE}}" alt="{{PRODUCT_NAME}}" id="mainProductImage">
+                </div>
+                <div class="product-thumbnails" id="productThumbnails">
+                    <!-- Thumbnails injected by build script -->
+                </div>
+            </div>
+            <div class="product-info">
+                <span class="product-category">{{PRODUCT_CATEGORY}}</span>
+                <h1 class="product-title">{{PRODUCT_NAME}}</h1>
+                <div class="product-price">NPR {{PRODUCT_PRICE}}</div>
+                <div class="stock-status">
+                    <span class="dot"></span>
+                    In Stock
+                </div>
+                <p class="product-description">{{PRODUCT_DESCRIPTION}}</p>
+
+                <div class="product-specs">
+                    <h3>Specifications</h3>
+                    <div class="specs-list">
+                        <div class="spec-item">
+                            <span class="spec-label">SKU</span>
+                            <span class="spec-value">SKU-{{PRODUCT_ID}}</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Category</span>
+                            <span class="spec-value">{{PRODUCT_CATEGORY}}</span>
+                        </div>
+                        {{SPECS_ROWS}}
+                    </div>
+                </div>
+
+                <div class="product-actions">
+                    <button class="btn-add-cart" id="addToCartBtn" data-name="{{PRODUCT_NAME}}" data-price="{{PRODUCT_PRICE_RAW}}">
+                        <i class="fas fa-cart-plus"></i>
+                        Add to Cart
+                    </button>
+                    <a href="{{WHATSAPP_URL}}" class="btn-buy-now" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                        Buy Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products">
+        <h2>Related Products</h2>
+        <div class="related-grid">
+            {{RELATED_PRODUCTS_HTML}}
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Shree Krishna Traders</h3>
+                    <p>Premium handcrafted tools from Nepal</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+9779864563255">+977 9864563255</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:neupane300@gmail.com">neupane300@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/VxQ6Xew92uWdGqkk8" target="_blank" rel="noopener">Butwal, Lumbini, Nepal</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@Toolsnepal" target="_blank" rel="noopener"><img src="../images/icons8-youtube-48.webp" alt="YouTube"></a>
+                        <a href="https://www.instagram.com/toolsnepal" target="_blank" rel="noopener"><img src="../images/icons8-instagram-48.webp" alt="Instagram"></a>
+                        <a href="https://www.tiktok.com/@krishnan5477" target="_blank" rel="noopener"><img src="../images/icons8-tiktok-48.webp" alt="TikTok"></a>
+                        <a href="https://wa.me/message/TWGZ7TGIUQ4QN1" target="_blank" rel="noopener"><img src="../images/icons8-whatsapp-48.webp" alt="WhatsApp"></a>
+                        <a href="https://www.facebook.com/profile.php?id=100042131903227&mibextid=LQQJ4d" target="_blank" rel="noopener"><img src="../images/icons8-facebook-48.webp" alt="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Shree Krishna Traders. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="totalPrice">NPR 0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="../products-data.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addBtn = document.getElementById('addToCartBtn');
+            if (addBtn && window.addToCart) {
+                addBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const name = this.dataset.name;
+                    const price = parseInt(this.dataset.price, 10);
+                    window.addToCart(name, price);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

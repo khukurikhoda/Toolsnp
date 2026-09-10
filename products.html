@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Tools Nepal</title>
+    <link rel="icon" type="image/webp" href="images/logo.webp">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.webp" alt="Shree Krishna Traders Logo" class="logo-image">
+                    <span>Tools Nepal</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link active">Products</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="products-page">
+        <div class="container">
+            <div class="products-header">
+                <h1>All Products</h1>
+                <p>Browse our complete collection of premium handcrafted tools</p>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search products...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="category-filters" id="categoryFilters">
+                <button class="category-btn active" data-category="All Products">All Products</button>
+                <button class="category-btn" data-category="Khukuri">Khukuri</button>
+                <button class="category-btn" data-category="Khoda">Khoda</button>
+                <button class="category-btn" data-category="Kitchen Knives">Kitchen Knives</button>
+                <button class="category-btn" data-category="Butcher Knives">Butcher Knives</button>
+                <button class="category-btn" data-category="Stands">Stands</button>
+                <button class="category-btn" data-category="Knife">Knife</button>
+                <button class="category-btn" data-category="Agricultural Tools">Agricultural Tools</button>
+                <button class="category-btn" data-category="Handicraft Tools">Handicraft Tools</button>
+                <button class="category-btn" data-category="Other Products">Other Products</button>
+            </div>
+
+            <!-- Sort & Price Filter -->
+            <div class="products-controls">
+                <div class="control-group">
+                    <label for="sortSelect">Sort By</label>
+                    <select id="sortSelect" class="control-select">
+                        <option value="price-asc">Price: Low &rarr; High</option>
+                        <option value="price-desc">Price: High &rarr; Low</option>
+                        <option value="name-asc">Name: A &rarr; Z</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="priceFilter">Price Range</label>
+                    <select id="priceFilter" class="control-select">
+                        <option value="all">All Prices</option>
+                        <option value="0-2000">Under NPR 2,000</option>
+                        <option value="2000-5000">NPR 2,000 &ndash; NPR 5,000</option>
+                        <option value="5000-10000">NPR 5,000 &ndash; NPR 10,000</option>
+                        <option value="10000-above">Above NPR 10,000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="latest-products-section" id="latestProductsSection">
+                <h2 class="latest-heading">Latest Products <span class="pp-pill">New arrivals</span></h2>
+                <div class="products-grid" id="latestProductsGrid">
+                    <!-- Latest products loaded here -->
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid" data-paginate="15">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+
+            <nav class="pagination" id="pagination" aria-label="Product pagination">
+                <!-- Pagination controls rendered by JS -->
+            </nav>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tools Nepal</h3>
+                    <p>Premium handcrafted tools from Nepal</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+9779864563255">+977 9864563255</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:neupane300@gmail.com">neupane300@gmail.com</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <a href="https://maps.app.goo.gl/VxQ6Xew92uWdGqkk8" target="_blank" rel="noopener">Butwal, Lumbini, Nepal</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="footer-social">
+                        <a href="https://www.youtube.com/@Toolsnepal" target="_blank" rel="noopener"><img src="images/icons8-youtube-48.webp" alt="YouTube"></a>
+                        <a href="https://www.instagram.com/toolsnepal" target="_blank" rel="noopener"><img src="images/icons8-instagram-48.webp" alt="Instagram"></a>
+                        <a href="https://www.tiktok.com/@krishnan5477" target="_blank" rel="noopener"><img src="images/icons8-tiktok-48.webp" alt="TikTok"></a>
+                        <a href="https://wa.me/message/TWGZ7TGIUQ4QN1" target="_blank" rel="noopener"><img src="images/icons8-whatsapp-48.webp" alt="WhatsApp"></a>
+                        <a href="https://www.facebook.com/profile.php?id=100042131903227&mibextid=LQQJ4d" target="_blank" rel="noopener"><img src="images/icons8-facebook-48.webp" alt="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tools Nepal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Shopping Cart</h3>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically loaded here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="totalPrice">NPR 0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

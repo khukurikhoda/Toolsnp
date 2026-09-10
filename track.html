@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Track Shipment - Tools Nepal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html" class="nav-logo-link">
+          <img src="images/logo.webp" alt="Shree Krishna Traders Logo" class="logo-image">
+          <span>Tools Nepal</span>
+        </a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="track.html" class="nav-link active">Track</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="padding:120px 20px;">
+    <h1>Track Shipment</h1>
+    <p>Enter a waybill / AWB number to fetch the latest tracking updates.</p>
+
+    <div style="max-width:700px; margin:1.5rem 0;">
+      <label for="waybill">Waybill / AWB number</label>
+      <input id="waybill" class="search-input" placeholder="e.g. 49621966041" />
+      <div style="margin-top:10px; display:flex; gap:10px;">
+        <button id="btnTrack" class="btn-primary">Track</button>
+        <button id="btnOpenNew" class="btn-secondary">Open result in new window</button>
+      </div>
+    </div>
+
+    <div id="result" style="max-width:900px;"></div>
+  </main>
+
+  <script src="track.js"></script>
+</body>
+</html>
+

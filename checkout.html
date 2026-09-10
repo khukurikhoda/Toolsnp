@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Tools Nepal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .checkout-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        
+        .checkout-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .checkout-header h1 {
+            color: var(--text-primary);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .checkout-form {
+            background: var(--dark-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .order-summary {
+            background: var(--dark-surface);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .order-summary h2 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: var(--dark-bg);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .order-item-info {
+            flex: 1;
+        }
+        
+        .order-item-name {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .order-item-quantity {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .order-item-price {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .order-item-thumb {
+            width: 55px;
+            height: 55px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .order-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-top: 2px solid var(--border-color);
+            margin-top: 1rem;
+        }
+        
+        .order-total-label {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .order-total-amount {
+            color: var(--success-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .whatsapp-button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: #25d366;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .whatsapp-button:hover {
+            background: #128c7e;
+            transform: translateY(-2px);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .empty-cart i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 768px) {
+            .checkout-container {
+                padding: 1rem;
+            }
+            
+            .checkout-form,
+            .order-summary {
+                padding: 1.5rem;
+            }
+            
+            .checkout-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="nav-logo-link">
+                    <img src="images/logo.webp" alt="Shree Krishna Traders Logo" class="logo-image">
+                    <span>Tools Nepal</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#products" class="nav-link">Products</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <h1>Checkout</h1>
+            <p style="color: var(--text-secondary);">Complete your order details</p>
+        </div>
+
+        <form class="checkout-form" id="checkoutForm">
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number *</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+                <label for="deliveryAddress">Delivery Address *</label>
+                <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required placeholder="Enter your complete delivery address"></textarea>
+            </div>
+        </form>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div id="orderItems"></div>
+            <div class="order-total">
+                <span class="order-total-label">Total:</span>
+                <span class="order-total-amount" id="totalAmount">NPR 0</span>
+            </div>
+            <button class="whatsapp-button" id="whatsappButton">
+                <i class="fab fa-whatsapp"></i>
+                Confirm Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Cart data - retrieved from localStorage
+        let cartItems = [];
+        
+        // Get cart from localStorage (where shopping cart stores items)
+        try {
+            const localCart = localStorage.getItem('cart');
+            if (localCart) {
+                cartItems = JSON.parse(localCart);
+            }
+        } catch (e) {
+            console.log('Could not read cart from localStorage');
+        }
+        
+        function renderOrderSummary() {
+            const orderItemsContainer = document.getElementById('orderItems');
+            const totalAmountElement = document.getElementById('totalAmount');
+            
+            if (cartItems.length === 0) {
+                orderItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+                totalAmountElement.textContent = 'NPR 0';
+                return;
+            }
+            
+            let total = 0;
+            let itemsHTML = '';
+            
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                itemsHTML += `
+                    <div class="order-item">
+                        <img class="order-item-thumb" src="${item.image || 'images/basket.webp'}" alt="${item.name}">
+                        <div class="order-item-info">
+                            <div class="order-item-name">${item.name}</div>
+                            <div class="order-item-quantity">Quantity: ${item.quantity}</div>
+                        </div>
+                        <div class="order-item-price">NPR ${itemTotal.toLocaleString()}</div>
+                    </div>
+                `;
+            });
+            
+            orderItemsContainer.innerHTML = itemsHTML;
+            totalAmountElement.textContent = `NPR ${total.toLocaleString()}`;
+        }
+        
+        function formatWhatsAppMessage() {
+            const fullName = document.getElementById('fullName').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const deliveryAddress = document.getElementById('deliveryAddress').value.trim();
+            
+            if (!fullName || !phoneNumber || !deliveryAddress) {
+                alert('Please fill in all required fields');
+                return null;
+            }
+            
+            let message = `🛒 *NEW ORDER - Shree Krishna Traders*\n\n👤 *Customer Details:*\nName: ${fullName}\nPhone: ${phoneNumber}\nAddress: ${deliveryAddress}\n\n📦 *Order Details:*\n`;
+            
+            if (cartItems.length === 0) {
+                message += 'No items in cart';
+            } else {
+                const itemDescriptions = cartItems.map(item => 
+                    `${item.name} (Qty: ${item.quantity}, NPR ${(item.price * item.quantity).toLocaleString()})`
+                );
+                message += itemDescriptions.join(', ');
+            }
+            
+            const total = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            message += `\n\n💰 *Total Amount:* NPR ${total.toLocaleString()}\n\n📍 *Delivery Address:* ${deliveryAddress}\n\n📞 *Contact:* ${phoneNumber}\n\nThank you for your order! 🎉`;
+            
+            return encodeURIComponent(message);
+        }
+        
+        // Event Listeners
+        document.getElementById('whatsappButton').addEventListener('click', function() {
+            const message = formatWhatsAppMessage();
+            if (message) {
+                const whatsappUrl = `https://wa.me/+9779864563255?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        });
+        
+        // Theme toggle functionality
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            const icon = document.getElementById('themeIcon');
+            if (document.body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderOrderSummary();
+        });
+    </script>
+</body>
+</html>
