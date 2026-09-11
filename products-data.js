@@ -1217,14 +1217,14 @@ const products = [
     ]
   },
 {
-    "id": 68,
+    "id": 109,
     "name": "KHUKURI HIGH QUALITY LEATHER",
     "slug": "khukuri-high-quality-leather-68",
-    "price": 4500,
+    "price": 8000,
     "category": "Khukuri",
     "description": "",
     "image": "images/khuk.webp",
-    "sku": "SKU-68",
+    "sku": "SKU-109",
     "images": [
       "images/khuk.webp"
     ],
@@ -1236,14 +1236,14 @@ const products = [
     ]
   },
 {
-    "id": 68,
+    "id": 110,
     "name": "Khukuri 12 inch",
     "slug": "khukuri-12-inch-68",
-    "price": 4500,
+    "price": 5000,
     "category": "Khukuri",
     "description": "",
     "image": "images/117.webp",
-    "sku": "SKU-68",
+    "sku": "SKU-110",
     "images": [
       "images/117.webp"
     ],
@@ -1255,14 +1255,14 @@ const products = [
     ]
   },
 {
-    "id": 68,
+    "id": 111,
     "name": "Khukuri 12 inch",
     "slug": "khukuri-12-inch-68-1",
-    "price": 4500,
+    "price": 7999,
     "category": "Khukuri",
     "description": "",
     "image": "images/115.webp",
-    "sku": "SKU-68",
+    "sku": "SKU-111",
     "images": [
       "images/115.webp"
     ],
@@ -1274,14 +1274,14 @@ const products = [
     ]
   },
 {
-    "id": 68,
+    "id": 112,
     "name": "Khukuri 12 inch",
     "slug": "khukuri-12-inch-68-2",
-    "price": 4500,
+    "price": 8000,
     "category": "Khukuri",
     "description": "",
     "image": "images/116.webp",
-    "sku": "SKU-68",
+    "sku": "SKU-112",
     "images": [
       "images/116.webp"
     ],
